@@ -23,5 +23,6 @@ def async_retry(retries: int = 3, sleep: int = 1) -> Callable:
                     if retry == retries:
                         raise
                 await asyncio.sleep(sleep)
+            return None
         return retry
     return wrapper
